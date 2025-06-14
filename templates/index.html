@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron bg-dark text-white p-5 rounded">
+    <h1 class="display-4">Bem-vindo ao AWS Cloud Practitioner Essentials</h1>
+    <p class="lead">Este é um exemplo de aplicação que demonstra a integração com serviços AWS.</p>
+    
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card bg-secondary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Informações do Sistema</h5>
+                    <p class="card-text">
+                        Plataforma: {{ system_info.platform }}<br>
+                        CPU: {{ system_info.cpu_percent }}%<br>
+                        Memória: {{ system_info.memory_percent }}%
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card bg-secondary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Amazon S3</h5>
+                    <p class="card-text">
+                        Gerencie seus arquivos no Amazon S3.<br>
+                        Faça upload e download de arquivos.
+                    </p>
+                    <a href="{{ url_for('s3') }}" class="btn btn-primary">Acessar S3</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card bg-secondary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Amazon RDS</h5>
+                    <p class="card-text">
+                        Acesse seu banco de dados PostgreSQL.<br>
+                        Visualize e gerencie seus dados.
+                    </p>
+                    <a href="{{ url_for('rds') }}" class="btn btn-primary">Acessar RDS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
